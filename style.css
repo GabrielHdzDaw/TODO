@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geo:ital@0;1&family=Syne+Mono&family=VT323&family=Xanh+Mono:ital@0;1&display=swap');
+ /* Available Fonts:
+ * - Doto
+  * - Geo
+  * - Syne Mono
+  * - VT323 
+  * - Xanh Mono
+ */
+
+:root {
+  /* Colors */
+  --color-background: #e0ded4;
+  --color-input: #ececec;
+  --color-text-primary: #292929;
+  --color-text-secondary: #868686;
+  --color-project-bg: #ebe9e8;
+  --color-project-header: #d1d1ca;
+  --color-note: #c4c2bf;
+  --color-completed: #646464;
+  --color-success: #5abb19;
+  --color-danger: #ff0000;
+  --color-shadow: rgba(0, 0, 0, 0.49);
+
+  /* Font Families */
+  --font-doto: "Doto", sans-serif;
+  --font-jacquard-12: "Jacquard 12"
+  --font-jacquard-24: "Jacquard 24"
+  --font-jersey: "Jersey 25", sans-serif;
+  --font-syne-mono: "Syne Mono", monospace;
+   
+
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-doto);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header h1 {
+  
+  font-size: 2.5em;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0;
+  user-select: none;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+header p {
+  
+  font-size: 1.5em;
+  color: var(--color-text-primary);
+  margin-top: 0;
+  user-select: none;
+}
+
+/* Input Styles */
+input[type="text"] {
+  
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-input);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Animated Text Styles */
+.animated-text {
+  display: inline-block;
+}
+
+.animated-text span {
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.animated-text span:hover {
+  color: var(--color-text-secondary);
+  animation: bounce 0.5s ease infinite;
+}
+
+/* Project Section Styles */
+.project-section {
+  
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  box-shadow: 3px 3px 28px 0px var(--color-shadow);
+  min-width: 700px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.project-section h2 {
+  font-size: 3.5rem;
+  color: var(--color-text-primary);
+  margin: 0;
+  user-select: none;
+}
+
+/* Project Styles */
+.project {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px 0;
+  background-color: var(--color-project-bg);
+  border-radius: 20px;
+  min-width: 600px;
+  max-width: 600px;
+  padding: 0 20px 30px 20px;
+}
+
+.project h3 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.project p {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin: 0 0 0 20px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-project-header);
+  padding: 0 20px 10px 20px;
+  border-radius: 20px 20px 0 0;
+}
+
+.project-header p {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Note Styles */
+.note {
+  
+  font-size: 2.5rem;
+  color: var(--color-text-primary);
+  margin: 20px 0 0 0;
+  background-color: var(--color-note);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note h3 {
+  
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.note-completed h3 {
+  transition: 0.7s;
+  color: var(--color-completed);
+  text-decoration: line-through;
+}
+
+.note:hover {
+  transition: 0.3s;
+  transform: translateY(-10px);
+}
+
+.note-inset,
+.note-normal {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.note-inset {
+  box-shadow: inset 3px 3px 8px var(--color-shadow),
+    3px 3px 8px rgba(0, 0, 0, 0);
+}
+
+.note-normal {
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0),
+    3px 3px 8px var(--color-shadow);
+}
+
+.note label {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-top: 0;
+}
+
+.note-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Button Styles */
+#createProjectButton {
+  transition: 0.3s;
+  
+  font-size: 3.5rem;
+  color: var(--color-success);
+  margin: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#createProjectButton:hover {
+  transition: 0.4s;
+  text-shadow: var(--color-text-primary) 1px 1px 1px;
+  transform: scale(1.2);
+  border-radius: 20px;
+}
+
+.delete-note-button,
+.create-note-button {
+  transition: 0.3s;
+  
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-note-button {
+  
+  color: var(--color-danger);
+  position: relative;
+  left: 20px;
+  bottom: 20px;
+}
+
+.complex-note .delete-note-button {
+  position: relative;
+  display: block;
+  left: -20px;
+  bottom: -15px;
+}
+
+.create-note-button {
+  
+  color: var(--color-success);
+  font-size: 2.5rem;
+}
+
+.delete-project-button {
+  transition: 0.3s;
+  
+  font-size: 1.5rem;
+  color: var(--color-danger);
+  margin: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Dialog Styles */
+dialog {
+  
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 3px 3px 28px 0px var(--color-shadow);
+}
+
+/* Form Styles */
+#projectForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 3px 3px 28px 0px var(--color-shadow);
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #f0f1e2;
+  width: 40%;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 3px 3px 28px 0px var(--color-shadow);
+}
+
+/* Animations */
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0, -4px);
+  }
+  40% {
+    transform: translate(4px, -4px);
+  }
+  60% {
+    transform: translate(4px, 4px);
+  }
+  80% {
+    transform: translate(-4px, 4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes quick-subtle-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+/* Animation Classes */
+.shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.delete-note-button:hover {
+  animation: quick-subtle-shake 0.1s ease-in-out infinite;
+}
+
+.delete-project-button:hover {
+  animation: quick-subtle-shake 0.1s ease-in-out infinite;
+}
+
+.delete-note-button:hover,
+.create-note-button:hover,
+.delete-project-button:hover {
+  transition: 0.3s;
+  text-shadow: var(--color-text-primary) 1px 1px 1px;
+  transform: scale(1.1);
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>TODO app</title>
+</head>
+
+<body>
+  <div class="body-colors">
+    <input type="color" name="bodyColor" id="bodyColor" value="#e0ded4"> 
+    <input type="color" name="containerColor" id="containerColor" value="#f0f1e2">
+    <select name="fontSelect" id="fontSelect" >
+      <option value="Doto" selected>Doto</option>
+      <option value="Syne Mono">Syne Mono</option>
+      <option value="Geo">Geo</option>
+      <option value="VT323">VT323</option>
+      <option value="Xanh Mono">Xanh Mono</option>
+    </select>
+  </div>
+  <main>
+    <div class="container">
+      <header>
+        <div>
+          <h1 class="animated-text">TODO app</h1>
+          <p class="animated-text">chafatronics</p>
+          
+        </div>
+      </header>
+
+      <section class="project-section">
+        <h2 class="animated-text">Proyectos</h2>
+        <div id="createProjectButton">+</div>
+        <ul id="projectList"></ul>
+      </section>
+
+      <template id="projectTemplate">
+        <li class="project">
+          <div class="project-header">
+            <h3 class="project-title "></h3>
+            <p class="project-description"></p>
+            <div class="create-note-button">+</div>
+            <div class="delete-project-button">X</div>
+          </div>
+          <ul class="note-list">
+            
+          </ul>
+        </li>
+      </template>
+
+      <template id="noteTemplate">
+        <li class="note note-normal">
+            <h3 class="note-title"></h3>
+            <div class="delete-note-button">X</div>
+        </li>
+    </template>
+    
+    <template id="complexNoteTemplate">
+        <li class="note complex-note">
+            <div class="note-header">
+                <h3 class="note-title"></h3>
+                <div class="delete-note-button">X</div>
+            </div>
+            <p class="note-description"></p>
+           
+        </li>
+    </template>
+
+    <dialog id="projectDialog">
+      <form id="projectForm">
+        <label for="projectName">Nombre del proyecto</label>
+        <input type="text" name="projectName" id="projectName" />
+        <label for="projectDescription">Descripción del proyecto</label>
+        <input type="text" name="projectDescription" id="projectDescription" />
+        <button type="submit">Crear proyecto</button>
+      </form>
+    </dialog>
+    <dialog id="noteDialog">
+      <form id="noteForm">
+        <label for="noteTitle">Título de la nota</label>
+        <input type="text" name="noteTitle" id="noteTitle" />
+        <input type="color" name="noteColor" id="noteColor" value="#FFFFFF"/>
+        <label for="">Añadir descripción</label>
+        <input type="checkbox" name="noteDescription" id="noteDescription">
+        <button type="submit">Crear nota</button>
+      </form>
+    </dialog>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
